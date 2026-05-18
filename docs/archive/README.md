@@ -1,6 +1,6 @@
 # Archive
 
-Historical implementation artifacts for the moltbook-pioneer module. The decisions described here have shipped; the current state of the codebase reflects them. Read the current documentation in [`docs/`](..) first; consult these only when investigating a specific decision's history.
+Historical implementation artifacts for the openagent-social module. The decisions described here have shipped; the current state of the codebase reflects them. Read the current documentation in [`docs/`](..) first; consult these only when investigating a specific decision's history.
 
 The module itself has been **parked since 2026-05-03** following Meta's acquisition of Moltbook on 2026-03-10 and the resulting API instability. See the banner in the repository root [`README.md`](../../README.md) for the full context.
 
@@ -8,7 +8,7 @@ The module itself has been **parked since 2026-05-03** following Meta's acquisit
 
 | File | Subject | Implementation |
 |---|---|---|
-| `specs/2026-04-04-vault-integration-design.md` | Pioneer ↔ vault-agent integration: how feed-scan results reach the agent through the perimeter | Implemented (defined in `component.yml` and `lobster-trapp/compose.yml`) |
+| `specs/2026-04-04-vault-integration-design.md` | Pioneer ↔ vault-agent integration: how feed-scan results reach the agent through the perimeter | Implemented (defined in `component.yml` and `opentrapp/compose.yml`) |
 | `specs/2026-04-05-regex-security-hardening.md` | Hardening the injection-pattern regex engine against PCRE / ERE compatibility issues | Implemented |
 | `specs/2026-04-07-engagement-presets.md` | Three engagement-level presets (Observer, Researcher, Participant) with GUI commands | Implemented |
 

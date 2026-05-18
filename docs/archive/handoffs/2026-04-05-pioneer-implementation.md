@@ -1,4 +1,4 @@
-# Handoff: Moltbook-Pioneer Implementation (Phases 3-5)
+# Handoff: OpenAgent-Social Implementation (Phases 3-5)
 
 **Date:** 2026-04-05
 **From:** Session that completed Phases 1-2 and wrote the roadmap + specs
@@ -7,7 +7,7 @@
 
 ## What This Module Is
 
-Moltbook-Pioneer is the **network safety layer** of the Lobster-TrApp trifecta. Three bash tools for safe observation of the Moltbook agentic social network (~1.5M registered agents, ~201K verified, acquired by Meta March 10 2026).
+OpenAgent-Social is the **network safety layer** of the OpenTrApp trifecta. Three bash tools for safe observation of the Moltbook agentic social network (~1.5M registered agents, ~201K verified, acquired by Meta March 10 2026).
 
 | Tool | Purpose | Lines | Tests |
 |------|---------|-------|-------|
@@ -21,7 +21,7 @@ Moltbook-Pioneer is the **network safety layer** of the Lobster-TrApp trifecta. 
 
 **Phase 1 (bug fixes):** 11 commits fixing CRLF, executable bits, eval injection, stderr routing, dead variable, safe_patterns wiring, pattern count, component.yml states. Two latent bugs also found and fixed: `(?i)` PCRE flag broke grep ERE matching, `|` delimiter collided with regex alternation.
 
-**Phase 2 (test framework):** 16 behavioral tests across 3 tools, 4 fixtures (clean, malicious, safe-research, empty), test framework ported from clawhub-forge.
+**Phase 2 (test framework):** 16 behavioral tests across 3 tools, 4 fixtures (clean, malicious, safe-research, empty), test framework ported from openskill-forge.
 
 **Factual validation:** All docs verified against Wikipedia, Wiz blog, Vectra AI, Apidog, TechCrunch, Fortune. Key corrections applied: API URL (`api.moltbook.com`), agent counts, rate limits, breach timeline, Meta acquisition.
 
@@ -82,7 +82,7 @@ patterns:
 **Why:** Forge has 87 skill-focused patterns, pioneer has 25 social-focused patterns. Different domains, but worth comparing.
 
 **Work:**
-1. Read forge's patterns at `clawhub-forge/tools/lib/patterns.sh`
+1. Read forge's patterns at `openskill-forge/tools/lib/patterns.sh`
 2. Compare against pioneer's `config/injection-patterns.yml`
 3. Document overlap in a comparison doc
 4. Decision: share or keep separate (expected: keep separate — different threat surfaces)
@@ -118,7 +118,7 @@ Meta acquired Moltbook March 10, 2026. The platform remained operational but its
 
 ### Test Framework
 
-Ported from clawhub-forge. Runner at `tests/_framework/tool-runner.sh` discovers `tests/tools/*.tool-test.sh` files. Assertions at `tests/_framework/tool-assertions.sh` (11 primitives). Tests define `test_` functions. Run via `make test`.
+Ported from openskill-forge. Runner at `tests/_framework/tool-runner.sh` discovers `tests/tools/*.tool-test.sh` files. Assertions at `tests/_framework/tool-assertions.sh` (11 primitives). Tests define `test_` functions. Run via `make test`.
 
 ### Safe Patterns
 
@@ -137,20 +137,20 @@ Ported from clawhub-forge. Runner at `tests/_framework/tool-runner.sh` discovers
 
 | Component | Status | Relevant to Pioneer |
 |-----------|--------|---------------------|
-| openclaw-vault | Complete (all 8 phases) | Phase 4 pattern export feeds into vault-proxy.py |
-| clawhub-forge | Complete (4/5 phases) | Phase 5 compares forge's 87 patterns with pioneer's 25 |
-| lobster-trapp GUI | Functional | Expects 6 commands from component.yml to work reliably |
+| opencli-container | Complete (all 8 phases) | Phase 4 pattern export feeds into vault-proxy.py |
+| openskill-forge | Complete (4/5 phases) | Phase 5 compares forge's 87 patterns with pioneer's 25 |
+| opentrapp GUI | Functional | Expects 6 commands from component.yml to work reliably |
 | Master roadmap | Phase A (pioneer bugs+tests) done | Pioneer Phases 3-5 are the remaining Phase A work |
 
 ## Commit Discipline
 
-Commits go to the **submodule** repo at `components/moltbook-pioneer/`. After pushing the submodule, update the parent's ref:
+Commits go to the **submodule** repo at `components/openagent-social/`. After pushing the submodule, update the parent's ref:
 
 ```bash
-cd components/moltbook-pioneer && git push
-cd ../.. && git add components/moltbook-pioneer && git commit -m "chore: update moltbook-pioneer submodule reference" && git push
+cd components/openagent-social && git push
+cd ../.. && git add components/openagent-social && git commit -m "chore: update openagent-social submodule reference" && git push
 ```
 
 ---
 
-*Cross-reference: `lobster-trapp/docs/superpowers/plans/2026-04-04-master-roadmap-v3.md` Phase A describes this work at the ecosystem level.*
+*Cross-reference: `opentrapp/docs/superpowers/plans/2026-04-04-master-roadmap-v3.md` Phase A describes this work at the ecosystem level.*

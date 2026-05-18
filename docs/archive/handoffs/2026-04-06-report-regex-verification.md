@@ -125,5 +125,5 @@ Gap A does not affect current patterns and is not a real threat without nested q
 
 ---
 
-*Verified from: `moltbook-pioneer repo root`*
+*Verified from: `openagent-social repo root`*
 *Commits reviewed: `58adf3f`..`220887d` on main*

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Moltbook Pioneer: Engagement Control — Level Presets
+# OpenAgent Social: Engagement Control — Level Presets
 #
 # Manages which engagement level the user operates at.
 # Presets configure rate limits, scanning, and identity requirements.
@@ -101,7 +101,7 @@ level_description() {
 
 show_status() {
   echo ""
-  echo -e "${BOLD}Moltbook Pioneer: Engagement Status${NC}"
+  echo -e "${BOLD}OpenAgent Social: Engagement Status${NC}"
   echo "===================================="
   echo ""
 
@@ -202,7 +202,7 @@ do_dry_run() {
   local preset_file="$PRESETS_DIR/${level}.env"
 
   echo ""
-  echo -e "${BOLD}Moltbook Pioneer: Engagement Control — Dry Run${NC}"
+  echo -e "${BOLD}OpenAgent Social: Engagement Control — Dry Run${NC}"
   echo "================================================"
   echo ""
 
@@ -282,7 +282,7 @@ do_apply() {
   local preset_file="$PRESETS_DIR/${level}.env"
 
   echo ""
-  echo -e "${BOLD}Moltbook Pioneer: Engagement Control — Apply${NC}"
+  echo -e "${BOLD}OpenAgent Social: Engagement Control — Apply${NC}"
   echo "=============================================="
   echo ""
 
@@ -456,7 +456,7 @@ while [[ $# -gt 0 ]]; do
       shift
       ;;
     -h|--help)
-      echo "Moltbook Pioneer: Engagement Control"
+      echo "OpenAgent Social: Engagement Control"
       echo ""
       echo "Usage:"
       echo "  $0 --status                              Show current engagement level"

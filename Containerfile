@@ -1,5 +1,5 @@
-# Moltbook-Pioneer: Containerized Feed Scanner & Monitoring Station
-# Part of the Lobster-TrApp perimeter — processes untrusted Moltbook
+# OpenAgent-Social: Containerized Feed Scanner & Monitoring Station
+# Part of the OpenTrApp perimeter — processes untrusted Moltbook
 # content inside the container, never on the host.
 #
 # Build:  podman build -t vault-pioneer -f Containerfile .
@@ -10,7 +10,7 @@
 
 FROM python:3.10-slim
 
-LABEL maintainer="Moltbook-Pioneer" \
+LABEL maintainer="OpenAgent-Social" \
       description="Feed injection scanner — filters untrusted social content inside the perimeter"
 
 # Install system dependencies

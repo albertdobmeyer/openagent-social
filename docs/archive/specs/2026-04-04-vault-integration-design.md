@@ -3,7 +3,7 @@
 **Date:** 2026-04-04
 **Phase:** Pioneer Phase 4
 **Status:** Design complete, implementation deferred until Moltbook domains enter allowlist
-**Cross-reference:** `openclaw-vault/docs/specs/2026-03-30-feed-scanning-deferred.md` (vault-side deferral decision)
+**Cross-reference:** `opencli-container/docs/specs/2026-03-30-feed-scanning-deferred.md` (vault-side deferral decision)
 
 ## Problem
 

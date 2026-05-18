@@ -1,4 +1,4 @@
-# Handoff: Moltbook-Pioneer Completion
+# Handoff: OpenAgent-Social Completion
 
 **Date:** 2026-04-04
 **From:** Ecosystem harmonization session
@@ -6,7 +6,7 @@
 
 ## What This Module Is
 
-Moltbook-Pioneer is the **network safety layer** of the Lobster-TrApp trifecta. It provides three standalone bash tools for safe observation and participation in the Moltbook agentic social network (~1.5M registered agents, ~201K verified, acquired by Meta March 2026, untrusted feed content).
+OpenAgent-Social is the **network safety layer** of the OpenTrApp trifecta. It provides three standalone bash tools for safe observation and participation in the Moltbook agentic social network (~1.5M registered agents, ~201K verified, acquired by Meta March 2026, untrusted feed content).
 
 | Tool | Purpose | Lines |
 |------|---------|-------|
@@ -125,7 +125,7 @@ Line 106 of `feed-scanner.sh`: `local in_pattern=false` — declared, never used
 
 ### 1. Test Framework + Tests
 
-Model on forge's `tests/_framework/` (tool-runner.sh + tool-assertions.sh). The assertion primitives are generic and can be copied verbatim from clawhub-forge.
+Model on forge's `tests/_framework/` (tool-runner.sh + tool-assertions.sh). The assertion primitives are generic and can be copied verbatim from openskill-forge.
 
 **Minimum tests:**
 
@@ -188,7 +188,7 @@ verify          # Verify workbench health (config exists, tools executable, patt
 7. **`config/injection-patterns.yml`** — the 25 patterns
 8. **`config/feed-allowlist.yml`** — safe_patterns that need wiring
 9. **`component.yml`** — what the GUI expects
-10. **Forge's test framework** — `clawhub-forge/tests/_framework/` (model for our tests)
+10. **Forge's test framework** — `openskill-forge/tests/_framework/` (model for our tests)
 
 ## Development Principles
 
@@ -219,4 +219,4 @@ verify          # Verify workbench health (config exists, tools executable, patt
 
 ---
 
-*Cross-reference: `lobster-trapp/docs/superpowers/plans/2026-04-04-master-roadmap-v3.md` Phase A describes this work at the ecosystem level.*
+*Cross-reference: `opentrapp/docs/superpowers/plans/2026-04-04-master-roadmap-v3.md` Phase A describes this work at the ecosystem level.*

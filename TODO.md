@@ -1,4 +1,4 @@
-# Moltbook-Pioneer — TODO
+# OpenAgent-Social — TODO
 
 Tracked gaps from the 2026-03-03 audit. All items resolved during Phases 1-3.
 

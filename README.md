@@ -1,4 +1,4 @@
-# moltbook-pioneer
+# openagent-social
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
@@ -10,7 +10,7 @@
 >
 > **What this repo still is, today:** a public research artifact documenting the threat patterns we observed on the Moltbook agent social network in early 2026 — prompt injection vectors, vote manipulation, trojanized skills, the database breach — and the perimeter design that was meant to handle them. The substantive notes are in [`docs/threat-landscape.md`](docs/threat-landscape.md), [`docs/platform-anatomy.md`](docs/platform-anatomy.md), and [`config/injection-patterns.yml`](config/injection-patterns.yml).
 >
-> **What this repo isn't right now:** part of the active Lobster-TrApp release path. The `vault-pioneer` container is still defined in lobster-trapp's `compose.yml` for completeness, but it has no live API to talk to.
+> **What this repo isn't right now:** part of the active OpenTrApp release path. The `vault-pioneer` container is still defined in opentrapp's `compose.yml` for completeness, but it has no live API to talk to.
 >
 > No affiliation with Meta or Moltbook. We're independent open-source researchers and we're flagging this clearly so anyone who finds the repo knows exactly where things stand.
 
@@ -55,7 +55,7 @@ The operating assumption of this module is that Moltbook feed content is untrust
 - Researchers studying agentic social networks, emergent agent behaviour, and prompt injection at social scale.
 - Developers building agents that interact with Moltbook and need safety guardrails.
 
-The module is not appropriate for casual browsing (use moltbook.com directly) or for running untrusted Moltbook-distributed skills (use [`openclaw-vault`](https://github.com/albertdobmeyer/openclaw-vault) for that).
+The module is not appropriate for casual browsing (use moltbook.com directly) or for running untrusted Moltbook-distributed skills (use [`opencli-container`](https://github.com/albertdobmeyer/opencli-container) for that).
 
 ---
 
@@ -93,8 +93,8 @@ Full interaction with content safety guardrails. Automated posting with rate lim
 
 ```bash
 # 1. Clone and configure
-git clone https://github.com/albertdobmeyer/moltbook-pioneer.git
-cd moltbook-pioneer
+git clone https://github.com/albertdobmeyer/openagent-social.git
+cd openagent-social
 cp config/.env.example config/.env
 # Edit config/.env — set MOLTBOOK_API_BASE (no API key needed for read-only)
 
@@ -194,16 +194,16 @@ The three modules cover the OpenClaw / ClawHub / Moltbook ecosystem:
 
 | Repository | Role | Description |
 |---|---|---|
-| [`openclaw-vault`](https://github.com/albertdobmeyer/openclaw-vault) | Runtime containment | Hardened container, proxy-side API-key injection, domain allowlist, three-level kill switch |
-| [`clawhub-forge`](https://github.com/albertdobmeyer/clawhub-forge) | Supply-chain defence | Offline linter, 87-pattern scanner, zero-trust line verifier, gated publishing pipeline |
-| `moltbook-pioneer` *(this repository)* | Social-content analysis | Feed scanning for prompt-injection patterns. **Parked since 2026-05-03**; see banner above. |
+| [`opencli-container`](https://github.com/albertdobmeyer/opencli-container) | Runtime containment | Hardened container, proxy-side API-key injection, domain allowlist, three-level kill switch |
+| [`openskill-forge`](https://github.com/albertdobmeyer/openskill-forge) | Supply-chain defence | Offline linter, 87-pattern scanner, zero-trust line verifier, gated publishing pipeline |
+| `openagent-social` *(this repository)* | Social-content analysis | Feed scanning for prompt-injection patterns. **Parked since 2026-05-03**; see banner above. |
 
 ---
 
 ## Project Structure
 
 ```
-moltbook-pioneer/
+openagent-social/
   docs/
     platform-anatomy.md             # How Moltbook works: API, agents, posts, votes
     threat-landscape.md             # Moltbook-specific risks and threat model
