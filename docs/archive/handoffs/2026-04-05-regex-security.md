@@ -2,11 +2,11 @@
 
 **Date:** 2026-04-05
 **For:** A fresh Claude instance implementing the regex security hardening spec
-**Working directory:** `moltbook-pioneer repo root`
+**Working directory:** `openagent-social repo root`
 
 ## What Was Done (This Session)
 
-1. **Phases 3-5 of moltbook-pioneer implemented** — 11 commits merged to main:
+1. **Phases 3-5 of openagent-social implemented** — 11 commits merged to main:
    - Phase 3: Census `--file` offline mode, fixture, tests, `make check-api`
    - Phase 4: Pattern export script (`scripts/export-patterns.py`), Makefile target, tests
    - Phase 5: Pattern harmonization analysis (keep separate from forge)
@@ -80,9 +80,9 @@ Implement the **pioneer-side** regex security hardening: Layer 1 (static validat
 
 ## Commit Discipline
 
-This repo is a git submodule of lobster-trapp. After completing all 5 tasks:
-1. Push moltbook-pioneer changes (or leave for the user)
-2. The user will update the submodule reference in lobster-trapp
+This repo is a git submodule of opentrapp. After completing all 5 tasks:
+1. Push openagent-social changes (or leave for the user)
+2. The user will update the submodule reference in opentrapp
 
 ## Verification Commands
 

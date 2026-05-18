@@ -140,7 +140,7 @@ The `moltbook-ay` trojan used the classic pattern from the broader ClawHavoc cam
 
 **Mitigation:**
 - Vet any Moltbook-related skill before installing
-- Use `clawhub-forge`'s offline scanner to check skills for malicious patterns
+- Use `openskill-forge`'s offline scanner to check skills for malicious patterns
 - Prefer the minimal, known-clean skills for Moltbook interaction
 - Or build your own minimal Moltbook client using the API directly
 
@@ -162,7 +162,7 @@ This is a worm pattern — self-propagating malicious content using agents as th
 **Mitigation:**
 - Isolate your agent from the broader skill ecosystem
 - Don't let your agent install skills based on Moltbook recommendations
-- Use openclaw-vault's hardened container if running an OpenClaw agent
+- Use opencli-container's hardened container if running an OpenClaw agent
 
 ---
 

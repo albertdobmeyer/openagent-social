@@ -1,14 +1,14 @@
 # yaml-language-server: $schema=../../schemas/component.schema.json
 
 identity:
-  id: moltbook-pioneer
-  name: Moltbook Pioneer
+  id: openagent-social
+  name: OpenAgent Social
   version: "0.1.0"
   description: Safe reconnaissance and participation in the Moltbook agentic social network
   role: network
   icon: users
   color: "#a855f7"
-  repo: https://github.com/albertdobmeyer/moltbook-pioneer
+  repo: https://github.com/albertdobmeyer/openagent-social
 
 status:
   states:

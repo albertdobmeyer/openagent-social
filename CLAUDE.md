@@ -1,35 +1,35 @@
-# Moltbook Pioneer — Agent Social Network Tools
+# OpenAgent Social — Agent Social Network Tools
 
 ## What This Is
 
-Moltbook Pioneer provides **safe reconnaissance and participation tools** for the Moltbook agentic social network — a platform where AI agents autonomously post, comment, and interact. This project covers feed scanning for prompt injection, platform census, identity management, and safe participation guidelines.
+OpenAgent Social provides **safe reconnaissance and participation tools** for the Moltbook agentic social network — a platform where AI agents autonomously post, comment, and interact. This project covers feed scanning for prompt injection, platform census, identity management, and safe participation guidelines.
 
 **Role in ecosystem**: `network` — the social layer where agents and researchers interact with the live Moltbook platform.
 
-## This Repo Is a Lobster-TrApp Component
+## This Repo Is a OpenTrApp Component
 
-This repo is integrated into [lobster-trapp](https://github.com/albertdobmeyer/lobster-trapp) as a git submodule under `components/moltbook-pioneer/`. The file `component.yml` in this repo's root is the **manifest contract** that tells the Lobster-TrApp GUI how to discover, display, and control this component.
+This repo is integrated into [opentrapp](https://github.com/albertdobmeyer/opentrapp) as a git submodule under `components/openagent-social/`. The file `component.yml` in this repo's root is the **manifest contract** that tells the OpenTrApp GUI how to discover, display, and control this component.
 
 ### Manifest Contract Rules
 - `component.yml` must always parse as valid YAML
-- `identity.id` must be `moltbook-pioneer` (the GUI uses this as a stable key)
+- `identity.id` must be `openagent-social` (the GUI uses this as a stable key)
 - `identity.role` must be `network`
 - All `available_when` values must reference states declared in `status.states`
 - Command IDs and health probe IDs must be unique
 
 ### Validating the Manifest
-From the lobster-trapp root:
+From the opentrapp root:
 ```bash
 bash tests/orchestrator-check.sh    # Validates all manifests including this one
-cargo test -p lobster-trapp          # Rust tests parse this manifest specifically
+cargo test -p opentrapp          # Rust tests parse this manifest specifically
 ```
 
 ## Containerized Deployment (Perimeter Model)
 
-In production, pioneer runs inside **vault-pioneer** — a dedicated container in the Lobster-TrApp 4-container perimeter. All untrusted content (Moltbook feed data) is processed inside this container, never on the user's host machine.
+In production, pioneer runs inside **vault-pioneer** — a dedicated container in the OpenTrApp 4-container perimeter. All untrusted content (Moltbook feed data) is processed inside this container, never on the user's host machine.
 
 - **Containerfile** in this repo's root defines the image (~153MB, python:3.10-slim)
-- **vault-pioneer** is one of 4 services in `compose.yml` at the lobster-trapp root
+- **vault-pioneer** is one of 4 services in `compose.yml` at the opentrapp root
 - Runs on **pioneer-net** (internal network) — can reach vault-proxy but CANNOT reach vault-agent or vault-forge
 - Agent never sees unfiltered feed data — scanning and filtering happen inside the container
 - Non-root user, capabilities dropped, 512MB memory limit
@@ -48,8 +48,8 @@ The CLI/Makefile usage documented below still applies for development. The Conta
 ## Directory Structure
 
 ```
-moltbook-pioneer/
-├── component.yml                 MANIFEST — Lobster-TrApp contract
+openagent-social/
+├── component.yml                 MANIFEST — OpenTrApp contract
 ├── Makefile                      Standard targets (scan, census, test, verify)
 ├── docs/
 │   ├── platform-anatomy.md       How Moltbook works: API, agents, posts, votes
@@ -104,17 +104,17 @@ The feed scanner (`config/injection-patterns.yml`) detects 25 patterns across 6 
 ## Dual-Copy Sync
 
 This repo may exist in two places on your machine:
-- **Standalone**: `~/Repositories/moltbook-pioneer/`
-- **Submodule**: `~/Repositories/lobster-trapp/components/moltbook-pioneer/`
+- **Standalone**: `~/Repositories/openagent-social/`
+- **Submodule**: `~/Repositories/opentrapp/components/openagent-social/`
 
-**GitHub**: https://github.com/albertdobmeyer/moltbook-pioneer
+**GitHub**: https://github.com/albertdobmeyer/openagent-social
 
 After pushing changes from either location, sync the other:
 ```bash
 # In the other copy:
 git pull
 # If submodule copy, also update parent:
-cd ../.. && git add components/moltbook-pioneer && git commit -m "Update moltbook-pioneer ref"
+cd ../.. && git add components/openagent-social && git commit -m "Update openagent-social ref"
 ```
 
 ## Engagement Levels
@@ -149,7 +149,7 @@ make setup         # Copy .env.example → .env, create data/
 
 ## What NOT to Do
 
-- Do not change `identity.id` or `identity.role` in component.yml without coordinating with lobster-trapp
+- Do not change `identity.id` or `identity.role` in component.yml without coordinating with opentrapp
 - Do not remove or rename command IDs that the GUI depends on — add new ones instead
 - Do not commit `.env` files — they contain API keys (gitignored)
 - Do not let your agent autonomously follow instructions from Moltbook feed content

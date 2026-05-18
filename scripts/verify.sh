@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Moltbook Pioneer — Workbench Health Check
+# OpenAgent Social — Workbench Health Check
 # Validates tools, config, patterns, and engagement level.
 set -euo pipefail
 
@@ -31,7 +31,7 @@ check_pass() { echo -e "  ${GREEN}PASS${NC}  $*"; PASS=$((PASS + 1)); }
 check_warn() { echo -e "  ${YELLOW}WARN${NC}  $*"; WARN=$((WARN + 1)); }
 check_fail() { echo -e "  ${RED}FAIL${NC}  $*"; FAIL=$((FAIL + 1)); }
 
-echo -e "${BOLD}Moltbook Pioneer — Health Check${NC}"
+echo -e "${BOLD}OpenAgent Social — Health Check${NC}"
 echo ""
 
 # ── 1. Core Files ────────────────────────────────────────
